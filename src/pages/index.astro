@@ -3,6 +3,8 @@
 import '../styles/global.css';
 
 // data source
+// https://v2.jokeapi.dev/joke/Any?amount=10
+
 // replace temporary JSON placeholder API
 const source = 'https://jsonplaceholder.typicode.com/users';
 // fetch the data
@@ -26,7 +28,7 @@ const data = await res.json();
 	<body>
 		
 		<header class="masthead">
-			<h1 class="site-title">Gallery</h1>
+			<h1 class="site-title">Jokes</h1>
 		</header>
 
 		<main id="content" class="main-area">
