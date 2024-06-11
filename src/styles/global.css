@@ -2,6 +2,7 @@
 
 /* Header */
 .masthead {
+    color: rgb(39, 74, 114);
     text-align: center;
     border-bottom: 2px solid hsl(0, 21%, 28%);
 }
