@@ -7,10 +7,7 @@ const source = 'https://v2.jokeapi.dev/joke/Any?amount=10';
 // fetch the data
 const res = await fetch(source); 
 // store retreived data
-const data = await res.json()
-.then((data) => {
-	return data.jokes;
-})
+const data = await res.json();
 ---
 
 <html lang="en">
@@ -33,10 +30,13 @@ const data = await res.json()
 
         <main id="content" class="main-area">
 			<ul class="cards">
-				{data.map((item) => (
-					<li>
-						<h2>Joke: {item.setup}</h2>
-						<p>Delivery: {item.delivery}</p>
+				{data.jokes.map((item) => (
+					<li class="jokes">
+                        <a href="#" class="jokes">
+                            
+						<h2>{item.setup}</h2>
+						<p>{item.delivery}</p>
+                    </a>
 					</li>
                 ))}
             </ul>
