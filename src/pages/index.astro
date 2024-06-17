@@ -30,12 +30,17 @@ const data = await res.json();
 
         <main id="content" class="main-area">
 			<ul class="cards">
+
 				{data.jokes.map((item) => (
-					<li class="jokes">
-                        <a href="#" class="jokes">
-                            
-						<h2>{item.setup}</h2>
-						<p>{item.delivery}</p>
+					<li class="cards">
+                        <a href="#">
+                       <figure class="card">
+                            <figcaption class="caption">
+                                <h2 class="caption-title">{item.setup}</h2>
+                                <p>{item.category}</p>
+                                <p>{item.delivery}</p>
+                            </figcaption>
+                        </figure>
                     </a>
 					</li>
                 ))}

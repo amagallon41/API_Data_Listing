@@ -2,18 +2,12 @@
 
 /* Header */
 .masthead {
-    color: rgb(39, 74, 114);
+    color: rgb(0, 2, 116);
     text-align: center;
-    border-bottom: 2px solid hsl(0, 21%, 28%);
+    border-bottom: 5px solid rgb(0, 2, 116);
 }
 
 /* Header */
-img {
-    display: block;
-    border: 0;
-    width: 100%;
-    height: auto;
-  }
     
 .cards {
 margin: 0;
@@ -23,13 +17,13 @@ list-style-type: none;
 
 .cards a {
 display: block;
-margin-bottom: 1em;
+margin-bottom: 1rem;
 text-decoration: none;
 }
 
 .caption {
 padding: 1em;
-background: hsla(246, 40%, 30%, 0.6);
+background: hsla(170, 100%, 18%, 0.6);
 color: white;
 font-size: 1.2em;
 transition: all 0.4s;
@@ -37,7 +31,7 @@ transition: all 0.4s;
 
 a:focus .caption,
 a:hover .caption {
-background: hsla(246, 40%, 30%, 1);
+background: rgb(228, 6, 25);
 }
 
 .caption-title {
