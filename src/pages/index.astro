@@ -3,59 +3,43 @@
 import '../styles/global.css';
 
 // data source
-// https://v2.jokeapi.dev/joke/Any?amount=10
-
-// replace temporary JSON placeholder API
-const source = 'https://jsonplaceholder.typicode.com/users';
+const source = 'https://v2.jokeapi.dev/joke/Any?amount=10';
 // fetch the data
 const res = await fetch(source); 
 // store retreived data
-const data = await res.json();
+const data = await res.json()
+.then((data) => {
+	return data.jokes;
+})
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
 
-		<!-- Normalize CSS -->
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+        <!-- Normalize CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
 
-		<title>Joke API displayed using Astro</title>
-	</head>
-	<body>
-		
-		<header class="masthead">
-			<h1 class="site-title">Daily Dose of Jokes for the Soul</h1>
-		</header>
+        <title>Daily Dose of Jokes</title>
+    </head>
+    <body>
+        
+        <header class="masthead">
+            <h1 class="site-title">Daily Dose of Jokes</h1>
+        </header>
 
-		<main id="content" class="main-area">
-
+        <main id="content" class="main-area">
 			<ul class="cards">
-		  
-				<!-- Your API Data -->
-				{
-					data.map( item =>
-					<li class="card-item">
-						<a href="#">
-							<figure class="card">
-							<img src="https://assets.codepen.io/16425/image-placeholder.png" alt="Placeholder">
-							<figcaption class="caption">
-								<h3 class="caption-title">{item.name}</h3>
-								<p>{item.company.catchPhrase}</p>
-							</figcaption>
-							</figure>
-						</a>
-					</li> 
-					)
-				}
-		  
-			</ul>
-		  </main>
-		  
-
-
-	</body>
+				{data.map((item) => (
+					<li>
+						<h2>Joke: {item.setup}</h2>
+						<p>Delivery: {item.delivery}</p>
+					</li>
+                ))}
+            </ul>
+        </main>
+    </body>
 </html>
